@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-let messages: any[] = []
+type Message = { id: number; date: string; address: string; mobile: string; country: string }
+const messages: Message[] = []
 let nextId = 1
 
 export async function GET() {

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Plus, Search, ShieldCheck, PencilLine, Fingerprint } from 'lucide-react'
-import { Trash } from 'lucide-react'
+
 
 type User = {
   id: number
@@ -58,7 +58,7 @@ export default function UsersPage() {
             <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
             <select
   value={status}
-  onChange={(e) => setStatus(e.target.value as any)}
+  onChange={(e) => setStatus(e.target.value as 'All' | 'Active' | 'Inactive')}
   className="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white
              text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 >
@@ -190,7 +190,7 @@ function CreateUserModal({
 }) {
   const [name, setName] = React.useState('')
   const [email, setEmail] = React.useState('')
-  const [status, setStatus] = React.useState<'Active' | 'Inactive'>('Active')
+  const [status, setStatus] = React.useState<'All' | 'Active' | 'Inactive'>('Active')
   const [saving, setSaving] = React.useState(false)
   const canSave = name.trim() && email.trim()
 
@@ -216,10 +216,10 @@ function CreateUserModal({
     } else {
       alert(data.error || 'Failed to create user')
     }
-  } catch (err) {
-  const error = err as Error
-  console.error('Error submitting user:', error.message)
-  alert(`Request failed: ${error.message}`)
+  } catch (error) {
+  const err = error as Error
+  console.error('Error submitting user:', err.message)
+  alert(`Request failed: ${err.message}`)
   setSaving(false)
 }
 }
@@ -253,7 +253,7 @@ function CreateUserModal({
             <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
             <select
               value={status}
-              onChange={(e) => setStatus(e.target.value as any)}
+              onChange={(e) => setStatus(e.target.value as 'All' | 'Active' | 'Inactive')}
               className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200"
             >
               <option>Active</option>
