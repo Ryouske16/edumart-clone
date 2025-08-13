@@ -1,14 +1,28 @@
-// src/lib/countries.ts
-export const COUNTRIES = [
-  'Afghanistan', 'Albania', 'Algeria', 'Argentina', 'Australia', 'Austria',
-  'Bangladesh', 'Belgium', 'Brazil', 'Canada', 'China', 'Denmark', 'Egypt',
-  'Ethiopia', 'Finland', 'France', 'Germany', 'Ghana', 'Greece', 'India',
-  'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Japan', 'Jordan',
-  'Kenya', 'Kuwait', 'Lebanon', 'Malaysia', 'Mexico', 'Morocco', 'Nepal',
-  'Netherlands', 'New Zealand', 'Nigeria', 'Norway', 'Pakistan', 'Palestine',
-  'Philippines', 'Poland', 'Portugal', 'Qatar', 'Russia', 'Saudi Arabia',
-  'Singapore', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'Sudan',
-  'Sweden', 'Switzerland', 'Syria', 'Thailand', 'Tunisia', 'Turkey',
-  'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States',
-  'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'
+export type Country = {
+  country: string
+  code: string
+}
+
+export const COUNTRIES: Country[] = [
+  { country: 'Afghanistan', code: 'AF' },
+  { country: 'Albania', code: 'AL' },
+  { country: 'Algeria', code: 'DZ' },
+  { country: 'Bangladesh', code: 'BD' },
+  { country: 'Brazil', code: 'BR' },
+  { country: 'Canada', code: 'CA' },
+  { country: 'China', code: 'CN' },
+  { country: 'France', code: 'FR' },
+  { country: 'Germany', code: 'DE' },
+  { country: 'India', code: 'IN' },
+  { country: 'Italy', code: 'IT' },
+  { country: 'Japan', code: 'JP' },
+  { country: 'Malaysia', code: 'MY' },
+  { country: 'Pakistan', code: 'PK' },
+  { country: 'Saudi Arabia', code: 'SA' },
+  { country: 'South Africa', code: 'ZA' },
+  { country: 'Spain', code: 'ES' },
+  { country: 'United Arab Emirates', code: 'AE' },
+  { country: 'United Kingdom', code: 'GB' },
+  { country: 'United States', code: 'US' }
+  // Add more as needed
 ]
